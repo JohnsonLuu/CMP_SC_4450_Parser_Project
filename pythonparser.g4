@@ -2,7 +2,6 @@ grammar pythonparser;
 
 start: (variable)* EOF;
 
-// variable assignment/definition TODO
 variable:  
     VAR ASSIGNMENT_OPERATORS (VAR | STRING | NUMBER | ARITHMETIC_FUNCTIONS) NEWLINE?;
 
@@ -19,12 +18,20 @@ DIGIT:
 LETTER:
     [a-zA-Z];
 
-//ASSIGNMENT_OPERATORS: 
- 
-//ARITHMETIC_OPERATORS: 
+ASSIGNMENT_OPERATORS: 
+	('=' | '+=' | '-=' | '*=' | '/=');
 
-//ARITHMETIC_FUNCTIONS: 
-   
-//NEWLINE: 
+ARITHMETIC_OPERATORS: 
+	('+' | '-' | '*' | '/' | '%');
 
-//WHITE_SPACE: 
+// at minimum, an arithmetic function must be complete, e.g. x + y / 1 + 1 
+// you can always add more aritmetic operators onto the minimum
+ARITHMETIC_FUNCTIONS: 
+	(NUMBER | VAR) ' '? ARITHMETIC_OPERATORS ' '? (NUMBER| VAR) (' '? ARITHMETIC_OPERATORS ' '? (NUMBER | VAR))*;
+
+// a new line always has \n 
+NEWLINE: 
+	('\n' ' '*) -> skip;
+
+WHITE_SPACE: 
+	[ \r\n\t]+ -> skip;

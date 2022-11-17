@@ -1,4 +1,4 @@
-# Generated from pythonparser.g4 by ANTLR 4.11.1
+# Generated from .\pythonparser.g4 by ANTLR 4.11.1
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
@@ -10,11 +10,11 @@ else:
 
 def serializedATN():
     return [
-        4,1,6,19,2,0,7,0,2,1,7,1,1,0,5,0,6,8,0,10,0,12,0,9,9,0,1,0,1,0,1,
-        1,1,1,1,1,1,1,3,1,17,8,1,1,1,0,0,2,0,2,0,1,2,0,1,1,3,5,18,0,7,1,
-        0,0,0,2,12,1,0,0,0,4,6,3,2,1,0,5,4,1,0,0,0,6,9,1,0,0,0,7,5,1,0,0,
-        0,7,8,1,0,0,0,8,10,1,0,0,0,9,7,1,0,0,0,10,11,5,0,0,1,11,1,1,0,0,
-        0,12,13,5,1,0,0,13,14,5,2,0,0,14,16,7,0,0,0,15,17,5,6,0,0,16,15,
+        4,1,10,19,2,0,7,0,2,1,7,1,1,0,5,0,6,8,0,10,0,12,0,9,9,0,1,0,1,0,
+        1,1,1,1,1,1,1,1,3,1,17,8,1,1,1,0,0,2,0,2,0,1,2,0,1,3,8,8,18,0,7,
+        1,0,0,0,2,12,1,0,0,0,4,6,3,2,1,0,5,4,1,0,0,0,6,9,1,0,0,0,7,5,1,0,
+        0,0,7,8,1,0,0,0,8,10,1,0,0,0,9,7,1,0,0,0,10,11,5,0,0,1,11,1,1,0,
+        0,0,12,13,5,1,0,0,13,14,5,6,0,0,14,16,7,0,0,0,15,17,5,9,0,0,16,15,
         1,0,0,0,16,17,1,0,0,0,17,3,1,0,0,0,2,7,16
     ]
 
@@ -30,8 +30,9 @@ class pythonparserParser ( Parser ):
 
     literalNames = [  ]
 
-    symbolicNames = [ "<INVALID>", "VAR", "ASSIGNMENT_OPERATORS", "STRING", 
-                      "NUMBER", "ARITHMETIC_FUNCTIONS", "NEWLINE" ]
+    symbolicNames = [ "<INVALID>", "VAR", "NUMBER", "STRING", "DIGIT", "LETTER", 
+                      "ASSIGNMENT_OPERATORS", "ARITHMETIC_OPERATORS", "ARITHMETIC_FUNCTIONS", 
+                      "NEWLINE", "WHITE_SPACE" ]
 
     RULE_start = 0
     RULE_variable = 1
@@ -40,11 +41,15 @@ class pythonparserParser ( Parser ):
 
     EOF = Token.EOF
     VAR=1
-    ASSIGNMENT_OPERATORS=2
+    NUMBER=2
     STRING=3
-    NUMBER=4
-    ARITHMETIC_FUNCTIONS=5
-    NEWLINE=6
+    DIGIT=4
+    LETTER=5
+    ASSIGNMENT_OPERATORS=6
+    ARITHMETIC_OPERATORS=7
+    ARITHMETIC_FUNCTIONS=8
+    NEWLINE=9
+    WHITE_SPACE=10
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -169,7 +174,7 @@ class pythonparserParser ( Parser ):
             self.match(pythonparserParser.ASSIGNMENT_OPERATORS)
             self.state = 14
             _la = self._input.LA(1)
-            if not(((_la) & ~0x3f) == 0 and ((1 << _la) & 58) != 0):
+            if not(((_la) & ~0x3f) == 0 and ((1 << _la) & 270) != 0):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -177,7 +182,7 @@ class pythonparserParser ( Parser ):
             self.state = 16
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==6:
+            if _la==9:
                 self.state = 15
                 self.match(pythonparserParser.NEWLINE)
 

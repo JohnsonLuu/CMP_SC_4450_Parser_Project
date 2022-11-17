@@ -1,4 +1,4 @@
-// Generated from /Users/darianhu/Desktop/PythonParse/CMP_SC_4450_Parser_Project/pythonparser.g4 by ANTLR 4.9.2
+// Generated from c:\Users\johns\Downloads\GitHub\CMP_SC_4450_Parser_Project\pythonparser.g4 by ANTLR 4.9.2
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -16,8 +16,8 @@ public class pythonparserParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		VAR=1, ASSIGNMENT_OPERATORS=2, STRING=3, NUMBER=4, ARITHMETIC_FUNCTIONS=5, 
-		NEWLINE=6;
+		VAR=1, NUMBER=2, STRING=3, DIGIT=4, LETTER=5, ASSIGNMENT_OPERATORS=6, 
+		ARITHMETIC_OPERATORS=7, ARITHMETIC_FUNCTIONS=8, NEWLINE=9, WHITE_SPACE=10;
 	public static final int
 		RULE_start = 0, RULE_variable = 1;
 	private static String[] makeRuleNames() {
@@ -34,8 +34,8 @@ public class pythonparserParser extends Parser {
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, "VAR", "ASSIGNMENT_OPERATORS", "STRING", "NUMBER", "ARITHMETIC_FUNCTIONS", 
-			"NEWLINE"
+			null, "VAR", "NUMBER", "STRING", "DIGIT", "LETTER", "ASSIGNMENT_OPERATORS", 
+			"ARITHMETIC_OPERATORS", "ARITHMETIC_FUNCTIONS", "NEWLINE", "WHITE_SPACE"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -168,7 +168,7 @@ public class pythonparserParser extends Parser {
 			match(ASSIGNMENT_OPERATORS);
 			setState(14);
 			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << VAR) | (1L << STRING) | (1L << NUMBER) | (1L << ARITHMETIC_FUNCTIONS))) != 0)) ) {
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << VAR) | (1L << NUMBER) | (1L << STRING) | (1L << ARITHMETIC_FUNCTIONS))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
 			else {
@@ -200,12 +200,12 @@ public class pythonparserParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\b\25\4\2\t\2\4\3"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\f\25\4\2\t\2\4\3"+
 		"\t\3\3\2\7\2\b\n\2\f\2\16\2\13\13\2\3\2\3\2\3\3\3\3\3\3\3\3\5\3\23\n\3"+
-		"\3\3\2\2\4\2\4\2\3\4\2\3\3\5\7\2\24\2\t\3\2\2\2\4\16\3\2\2\2\6\b\5\4\3"+
+		"\3\3\2\2\4\2\4\2\3\4\2\3\5\n\n\2\24\2\t\3\2\2\2\4\16\3\2\2\2\6\b\5\4\3"+
 		"\2\7\6\3\2\2\2\b\13\3\2\2\2\t\7\3\2\2\2\t\n\3\2\2\2\n\f\3\2\2\2\13\t\3"+
-		"\2\2\2\f\r\7\2\2\3\r\3\3\2\2\2\16\17\7\3\2\2\17\20\7\4\2\2\20\22\t\2\2"+
-		"\2\21\23\7\b\2\2\22\21\3\2\2\2\22\23\3\2\2\2\23\5\3\2\2\2\4\t\22";
+		"\2\2\2\f\r\7\2\2\3\r\3\3\2\2\2\16\17\7\3\2\2\17\20\7\b\2\2\20\22\t\2\2"+
+		"\2\21\23\7\13\2\2\22\21\3\2\2\2\22\23\3\2\2\2\23\5\3\2\2\2\4\t\22";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
