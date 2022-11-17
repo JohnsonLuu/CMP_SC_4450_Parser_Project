@@ -24,15 +24,15 @@ To setup the environments listed above, users will need to run the following com
 \
 Java:\
 \
-Head to the link below and install the latest version of Java\
+Head to the link below and install the latest version of Java
 
-https://www.oracle.com/java/technologies/downloads/\
+https://www.oracle.com/java/technologies/downloads/
 \
 Python:\
 \
-Head to the link below and install the latest version of Python\
+Head to the link below and install the latest version of Python
 
-https://www.python.org/downloads/\
+https://www.python.org/downloads/
 \
 ANTLR:\
 \
