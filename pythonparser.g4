@@ -1,6 +1,6 @@
 grammar pythonparser;
 
-start: (variable | if)* EOF;
+start: (variable | ifblocks)* EOF;
 
 variable:  
     VAR ASSIGNMENT_OPERATORS (VAR | STRING | NUMBER | ARITHMETIC_FUNCTIONS) NEWLINE?;
@@ -48,7 +48,7 @@ conditional:
 CONDITIONAL_OPERATORS: 
     ('<' | '<=' | '>' | '>=' | '==' | '!=');
 
-if: 
-    ('if' '('? conditional ')'? ':')
-    ('elif' '('? conditional ')'? ':')*
-    ('else' ':')?;
+ifblocks: 
+    ('if' '('? conditional ')'? ':' block)
+    ('elif' '('? conditional ')'? ':' block)*
+    ('else' ':' block)?;
