@@ -35,3 +35,15 @@ NEWLINE:
 
 WHITE_SPACE: 
 	[ \r\n\t]+ -> skip;
+
+conditional: 
+    VAR
+    | NUMBER
+    | STRING
+    | ARITHMETIC_FUNCTIONS
+    | conditional ('and' | 'or' | 'not') conditional
+    | conditional CONDITIONAL_OPERATORS conditional
+    | conditional ARITHMETIC_OPERATORS conditional;
+
+CONDITIONAL_OPERATORS: 
+    ('<' | '<=' | '>' | '>=' | '==' | '!=');
