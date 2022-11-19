@@ -52,3 +52,6 @@ ifblocks:
     ('if' '('? conditional ')'? ':' block)
     ('elif' '('? conditional ')'? ':' block)*
     ('else' ':' block)?;
+
+block: 
+    ((variable | ifblocks)+ NEWLINE?);

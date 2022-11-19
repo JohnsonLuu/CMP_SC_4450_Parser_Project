@@ -1,4 +1,4 @@
-# Generated from .\pythonparser.g4 by ANTLR 4.11.1
+# Generated from pythonparser.g4 by ANTLR 4.11.1
 from antlr4 import *
 if __name__ is not None and "." in __name__:
     from .pythonparserParser import pythonparserParser
@@ -35,12 +35,21 @@ class pythonparserListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by pythonparserParser#if.
-    def enterIf(self, ctx:pythonparserParser.IfContext):
+    # Enter a parse tree produced by pythonparserParser#ifblocks.
+    def enterIfblocks(self, ctx:pythonparserParser.IfblocksContext):
         pass
 
-    # Exit a parse tree produced by pythonparserParser#if.
-    def exitIf(self, ctx:pythonparserParser.IfContext):
+    # Exit a parse tree produced by pythonparserParser#ifblocks.
+    def exitIfblocks(self, ctx:pythonparserParser.IfblocksContext):
+        pass
+
+
+    # Enter a parse tree produced by pythonparserParser#block.
+    def enterBlock(self, ctx:pythonparserParser.BlockContext):
+        pass
+
+    # Exit a parse tree produced by pythonparserParser#block.
+    def exitBlock(self, ctx:pythonparserParser.BlockContext):
         pass
 
 
