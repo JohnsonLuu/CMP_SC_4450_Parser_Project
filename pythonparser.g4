@@ -1,6 +1,6 @@
 grammar pythonparser;
 
-start: (variable | ifblocks | whileloop | comment)* EOF;
+start: (variable | ifblocks | whileloop | comment | forloop)* EOF;
 
 variable:  
     VAR ASSIGNMENT_OPERATORS (VAR | STRING | NUMBER | ARITHMETIC_FUNCTIONS) NEWLINE?;
@@ -61,3 +61,7 @@ whileloop:
 
 comment: 
     '#' ~('\n')*;
+
+// range parameters are start and stop
+forloop: 
+    ('for' VAR 'in' (VAR | 'range(' ((VAR | NUMBER | ARITHMETIC_FUNCTIONS) ',' (VAR | NUMBER | ARITHMETIC_FUNCTIONS)) ')') ':'  block);

@@ -71,5 +71,14 @@ class pythonparserListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by pythonparserParser#forloop.
+    def enterForloop(self, ctx:pythonparserParser.ForloopContext):
+        pass
+
+    # Exit a parse tree produced by pythonparserParser#forloop.
+    def exitForloop(self, ctx:pythonparserParser.ForloopContext):
+        pass
+
+
 
 del pythonparserParser
