@@ -58,3 +58,6 @@ block:
 
 whileloop: 
     ('while' conditional ':' block);
+
+comment: 
+    '#' ~('\n')*;

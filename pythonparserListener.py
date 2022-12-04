@@ -1,4 +1,4 @@
-# Generated from pythonparser.g4 by ANTLR 4.11.1
+# Generated from .\pythonparser.g4 by ANTLR 4.11.1
 from antlr4 import *
 if __name__ is not None and "." in __name__:
     from .pythonparserParser import pythonparserParser
@@ -59,6 +59,15 @@ class pythonparserListener(ParseTreeListener):
 
     # Exit a parse tree produced by pythonparserParser#whileloop.
     def exitWhileloop(self, ctx:pythonparserParser.WhileloopContext):
+        pass
+
+
+    # Enter a parse tree produced by pythonparserParser#comment.
+    def enterComment(self, ctx:pythonparserParser.CommentContext):
+        pass
+
+    # Exit a parse tree produced by pythonparserParser#comment.
+    def exitComment(self, ctx:pythonparserParser.CommentContext):
         pass
 
 
