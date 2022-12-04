@@ -1,6 +1,6 @@
 grammar pythonparser;
 
-start: (variable | ifblocks)* EOF;
+start: (variable | ifblocks | whileloop)* EOF;
 
 variable:  
     VAR ASSIGNMENT_OPERATORS (VAR | STRING | NUMBER | ARITHMETIC_FUNCTIONS) NEWLINE?;
@@ -55,3 +55,6 @@ ifblocks:
 
 block: 
     ((variable | ifblocks)+ NEWLINE?);
+
+whileloop: 
+    ('while' conditional ':' block);
