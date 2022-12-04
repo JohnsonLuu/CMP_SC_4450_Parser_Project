@@ -1,6 +1,10 @@
 grammar pythonparser;
 
-start: (variable | ifblocks | whileloop | comment | forloop)* EOF;
+start: 
+    (definitions)* EOF;
+
+definitions: 
+    variable | ifblocks | whileloop | comment | forloop;
 
 variable:  
     VAR ASSIGNMENT_OPERATORS (VAR | STRING | NUMBER | ARITHMETIC_FUNCTIONS) NEWLINE?;
@@ -54,13 +58,14 @@ ifblocks:
     ('else' ':' block)?;
 
 block: 
-    ((variable | ifblocks)+ NEWLINE?);
+    (((definitions)+ 'break'? | 'break') NEWLINE?);
 
 whileloop: 
     ('while' conditional ':' block);
 
-comment: 
-    '#' ~('\n')*;
+comment : COMMENT;
+COMMENT: 
+    '#' ~('\n' | '\r')*;
 
 // range parameters are start and stop
 forloop: 

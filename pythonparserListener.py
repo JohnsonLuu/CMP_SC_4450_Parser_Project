@@ -17,6 +17,15 @@ class pythonparserListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by pythonparserParser#definitions.
+    def enterDefinitions(self, ctx:pythonparserParser.DefinitionsContext):
+        pass
+
+    # Exit a parse tree produced by pythonparserParser#definitions.
+    def exitDefinitions(self, ctx:pythonparserParser.DefinitionsContext):
+        pass
+
+
     # Enter a parse tree produced by pythonparserParser#variable.
     def enterVariable(self, ctx:pythonparserParser.VariableContext):
         pass
