@@ -69,4 +69,4 @@ COMMENT:
 
 // range parameters are start and stop
 forloop: 
-    ('for' VAR 'in' (VAR | 'range(' (NUMBER | ((VAR | NUMBER | ARITHMETIC_FUNCTIONS) ',' (VAR | NUMBER | ARITHMETIC_FUNCTIONS))) ')') ':'  block);
+    ('for' VAR 'in' (VAR | 'range(' (VAR | ((VAR | NUMBER | ARITHMETIC_FUNCTIONS) ',' (VAR | NUMBER | ARITHMETIC_FUNCTIONS))) ')') ':'  block);
