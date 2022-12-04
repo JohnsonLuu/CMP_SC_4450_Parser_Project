@@ -19,3 +19,7 @@ if x == 1:
             x = 4
 
 #This is a test comment
+
+y = 2
+while  i  <  6 :
+  y = 3
