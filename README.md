@@ -28,6 +28,7 @@ Head to the link below and install the latest version of Java
 https://www.oracle.com/java/technologies/downloads/
 
 Once installed, use the following command to run the jar file:
+\
 ```java -jar .\antlr-4.11.1-complete.jar -Dlanguage=Python3 .\pythonparser.g4```
 
 Python:
@@ -36,6 +37,7 @@ Head to the link below and install the latest version of Python
 https://www.python.org/downloads/
 
 Once installed, run the following command to test Python files:
+\
 ```python main.py test.py```
 
 ANTLR:\
