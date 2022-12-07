@@ -1,4 +1,4 @@
-// Generated from c:\Users\johns\Downloads\mostupdated\CMP_SC_4450_Parser_Project\pythonparser.g4 by ANTLR 4.9.2
+// Generated from c:\Users\johns\Downloads\CMP_SC_4450_Parser_Project\pythonparser.g4 by ANTLR 4.9.2
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -18,9 +18,8 @@ public class pythonparserParser extends Parser {
 	public static final int
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
 		T__9=10, T__10=11, T__11=12, T__12=13, T__13=14, T__14=15, VAR=16, NUMBER=17, 
-		STRING=18, DIGIT=19, LETTER=20, ASSIGNMENT_OPERATORS=21, ARITHMETIC_OPERATORS=22, 
-		ARITHMETIC_FUNCTIONS=23, NEWLINE=24, WHITE_SPACE=25, CONDITIONAL_OPERATORS=26, 
-		COMMENT=27;
+		STRING=18, DIGIT=19, LETTER=20, ASSIGN_OP=21, ARITH_OP=22, ARITH_FUNC=23, 
+		NEWLINE=24, WHITE_SPACE=25, COND_OP=26, COMMENT=27;
 	public static final int
 		RULE_start = 0, RULE_definitions = 1, RULE_variable = 2, RULE_conditional = 3, 
 		RULE_ifblocks = 4, RULE_block = 5, RULE_whileloop = 6, RULE_comment = 7, 
@@ -44,8 +43,8 @@ public class pythonparserParser extends Parser {
 		return new String[] {
 			null, null, null, null, null, null, null, null, null, null, null, null, 
 			null, null, null, null, "VAR", "NUMBER", "STRING", "DIGIT", "LETTER", 
-			"ASSIGNMENT_OPERATORS", "ARITHMETIC_OPERATORS", "ARITHMETIC_FUNCTIONS", 
-			"NEWLINE", "WHITE_SPACE", "CONDITIONAL_OPERATORS", "COMMENT"
+			"ASSIGN_OP", "ARITH_OP", "ARITH_FUNC", "NEWLINE", "WHITE_SPACE", "COND_OP", 
+			"COMMENT"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -233,10 +232,10 @@ public class pythonparserParser extends Parser {
 		public TerminalNode VAR(int i) {
 			return getToken(pythonparserParser.VAR, i);
 		}
-		public TerminalNode ASSIGNMENT_OPERATORS() { return getToken(pythonparserParser.ASSIGNMENT_OPERATORS, 0); }
+		public TerminalNode ASSIGN_OP() { return getToken(pythonparserParser.ASSIGN_OP, 0); }
 		public TerminalNode STRING() { return getToken(pythonparserParser.STRING, 0); }
 		public TerminalNode NUMBER() { return getToken(pythonparserParser.NUMBER, 0); }
-		public TerminalNode ARITHMETIC_FUNCTIONS() { return getToken(pythonparserParser.ARITHMETIC_FUNCTIONS, 0); }
+		public TerminalNode ARITH_FUNC() { return getToken(pythonparserParser.ARITH_FUNC, 0); }
 		public TerminalNode NEWLINE() { return getToken(pythonparserParser.NEWLINE, 0); }
 		public VariableContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -254,10 +253,10 @@ public class pythonparserParser extends Parser {
 			setState(33);
 			match(VAR);
 			setState(34);
-			match(ASSIGNMENT_OPERATORS);
+			match(ASSIGN_OP);
 			setState(35);
 			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << VAR) | (1L << NUMBER) | (1L << STRING) | (1L << ARITHMETIC_FUNCTIONS))) != 0)) ) {
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << VAR) | (1L << NUMBER) | (1L << STRING) | (1L << ARITH_FUNC))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
 			else {
@@ -292,15 +291,15 @@ public class pythonparserParser extends Parser {
 		public TerminalNode VAR() { return getToken(pythonparserParser.VAR, 0); }
 		public TerminalNode NUMBER() { return getToken(pythonparserParser.NUMBER, 0); }
 		public TerminalNode STRING() { return getToken(pythonparserParser.STRING, 0); }
-		public TerminalNode ARITHMETIC_FUNCTIONS() { return getToken(pythonparserParser.ARITHMETIC_FUNCTIONS, 0); }
+		public TerminalNode ARITH_FUNC() { return getToken(pythonparserParser.ARITH_FUNC, 0); }
 		public List<ConditionalContext> conditional() {
 			return getRuleContexts(ConditionalContext.class);
 		}
 		public ConditionalContext conditional(int i) {
 			return getRuleContext(ConditionalContext.class,i);
 		}
-		public TerminalNode CONDITIONAL_OPERATORS() { return getToken(pythonparserParser.CONDITIONAL_OPERATORS, 0); }
-		public TerminalNode ARITHMETIC_OPERATORS() { return getToken(pythonparserParser.ARITHMETIC_OPERATORS, 0); }
+		public TerminalNode COND_OP() { return getToken(pythonparserParser.COND_OP, 0); }
+		public TerminalNode ARITH_OP() { return getToken(pythonparserParser.ARITH_OP, 0); }
 		public ConditionalContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -344,10 +343,10 @@ public class pythonparserParser extends Parser {
 				match(STRING);
 				}
 				break;
-			case ARITHMETIC_FUNCTIONS:
+			case ARITH_FUNC:
 				{
 				setState(43);
-				match(ARITHMETIC_FUNCTIONS);
+				match(ARITH_FUNC);
 				}
 				break;
 			default:
@@ -392,7 +391,7 @@ public class pythonparserParser extends Parser {
 						setState(49);
 						if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
 						setState(50);
-						match(CONDITIONAL_OPERATORS);
+						match(COND_OP);
 						setState(51);
 						conditional(3);
 						}
@@ -404,7 +403,7 @@ public class pythonparserParser extends Parser {
 						setState(52);
 						if (!(precpred(_ctx, 1))) throw new FailedPredicateException(this, "precpred(_ctx, 1)");
 						setState(53);
-						match(ARITHMETIC_OPERATORS);
+						match(ARITH_OP);
 						setState(54);
 						conditional(2);
 						}
@@ -734,9 +733,9 @@ public class pythonparserParser extends Parser {
 		public TerminalNode NUMBER(int i) {
 			return getToken(pythonparserParser.NUMBER, i);
 		}
-		public List<TerminalNode> ARITHMETIC_FUNCTIONS() { return getTokens(pythonparserParser.ARITHMETIC_FUNCTIONS); }
-		public TerminalNode ARITHMETIC_FUNCTIONS(int i) {
-			return getToken(pythonparserParser.ARITHMETIC_FUNCTIONS, i);
+		public List<TerminalNode> ARITH_FUNC() { return getTokens(pythonparserParser.ARITH_FUNC); }
+		public TerminalNode ARITH_FUNC(int i) {
+			return getToken(pythonparserParser.ARITH_FUNC, i);
 		}
 		public ForloopContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -785,7 +784,7 @@ public class pythonparserParser extends Parser {
 					{
 					setState(119);
 					_la = _input.LA(1);
-					if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << VAR) | (1L << NUMBER) | (1L << ARITHMETIC_FUNCTIONS))) != 0)) ) {
+					if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << VAR) | (1L << NUMBER) | (1L << ARITH_FUNC))) != 0)) ) {
 					_errHandler.recoverInline(this);
 					}
 					else {
@@ -797,7 +796,7 @@ public class pythonparserParser extends Parser {
 					match(T__14);
 					setState(121);
 					_la = _input.LA(1);
-					if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << VAR) | (1L << NUMBER) | (1L << ARITHMETIC_FUNCTIONS))) != 0)) ) {
+					if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << VAR) | (1L << NUMBER) | (1L << ARITH_FUNC))) != 0)) ) {
 					_errHandler.recoverInline(this);
 					}
 					else {

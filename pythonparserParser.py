@@ -75,9 +75,9 @@ class pythonparserParser ( Parser ):
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "VAR", "NUMBER", "STRING", "DIGIT", "LETTER", "ASSIGNMENT_OPERATORS", 
-                      "ARITHMETIC_OPERATORS", "ARITHMETIC_FUNCTIONS", "NEWLINE", 
-                      "WHITE_SPACE", "CONDITIONAL_OPERATORS", "COMMENT" ]
+                      "VAR", "NUMBER", "STRING", "DIGIT", "LETTER", "ASSIGN_OP", 
+                      "ARITH_OP", "ARITH_FUNC", "NEWLINE", "WHITE_SPACE", 
+                      "COND_OP", "COMMENT" ]
 
     RULE_start = 0
     RULE_definitions = 1
@@ -113,12 +113,12 @@ class pythonparserParser ( Parser ):
     STRING=18
     DIGIT=19
     LETTER=20
-    ASSIGNMENT_OPERATORS=21
-    ARITHMETIC_OPERATORS=22
-    ARITHMETIC_FUNCTIONS=23
+    ASSIGN_OP=21
+    ARITH_OP=22
+    ARITH_FUNC=23
     NEWLINE=24
     WHITE_SPACE=25
-    CONDITIONAL_OPERATORS=26
+    COND_OP=26
     COMMENT=27
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
@@ -288,8 +288,8 @@ class pythonparserParser ( Parser ):
             else:
                 return self.getToken(pythonparserParser.VAR, i)
 
-        def ASSIGNMENT_OPERATORS(self):
-            return self.getToken(pythonparserParser.ASSIGNMENT_OPERATORS, 0)
+        def ASSIGN_OP(self):
+            return self.getToken(pythonparserParser.ASSIGN_OP, 0)
 
         def STRING(self):
             return self.getToken(pythonparserParser.STRING, 0)
@@ -297,8 +297,8 @@ class pythonparserParser ( Parser ):
         def NUMBER(self):
             return self.getToken(pythonparserParser.NUMBER, 0)
 
-        def ARITHMETIC_FUNCTIONS(self):
-            return self.getToken(pythonparserParser.ARITHMETIC_FUNCTIONS, 0)
+        def ARITH_FUNC(self):
+            return self.getToken(pythonparserParser.ARITH_FUNC, 0)
 
         def NEWLINE(self):
             return self.getToken(pythonparserParser.NEWLINE, 0)
@@ -327,7 +327,7 @@ class pythonparserParser ( Parser ):
             self.state = 33
             self.match(pythonparserParser.VAR)
             self.state = 34
-            self.match(pythonparserParser.ASSIGNMENT_OPERATORS)
+            self.match(pythonparserParser.ASSIGN_OP)
             self.state = 35
             _la = self._input.LA(1)
             if not(((_la) & ~0x3f) == 0 and ((1 << _la) & 8847360) != 0):
@@ -368,8 +368,8 @@ class pythonparserParser ( Parser ):
         def STRING(self):
             return self.getToken(pythonparserParser.STRING, 0)
 
-        def ARITHMETIC_FUNCTIONS(self):
-            return self.getToken(pythonparserParser.ARITHMETIC_FUNCTIONS, 0)
+        def ARITH_FUNC(self):
+            return self.getToken(pythonparserParser.ARITH_FUNC, 0)
 
         def conditional(self, i:int=None):
             if i is None:
@@ -378,11 +378,11 @@ class pythonparserParser ( Parser ):
                 return self.getTypedRuleContext(pythonparserParser.ConditionalContext,i)
 
 
-        def CONDITIONAL_OPERATORS(self):
-            return self.getToken(pythonparserParser.CONDITIONAL_OPERATORS, 0)
+        def COND_OP(self):
+            return self.getToken(pythonparserParser.COND_OP, 0)
 
-        def ARITHMETIC_OPERATORS(self):
-            return self.getToken(pythonparserParser.ARITHMETIC_OPERATORS, 0)
+        def ARITH_OP(self):
+            return self.getToken(pythonparserParser.ARITH_OP, 0)
 
         def getRuleIndex(self):
             return pythonparserParser.RULE_conditional
@@ -424,7 +424,7 @@ class pythonparserParser ( Parser ):
                 pass
             elif token in [23]:
                 self.state = 43
-                self.match(pythonparserParser.ARITHMETIC_FUNCTIONS)
+                self.match(pythonparserParser.ARITH_FUNC)
                 pass
             else:
                 raise NoViableAltException(self)
@@ -467,7 +467,7 @@ class pythonparserParser ( Parser ):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 2)")
                         self.state = 50
-                        self.match(pythonparserParser.CONDITIONAL_OPERATORS)
+                        self.match(pythonparserParser.COND_OP)
                         self.state = 51
                         self.conditional(3)
                         pass
@@ -480,7 +480,7 @@ class pythonparserParser ( Parser ):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 1)")
                         self.state = 53
-                        self.match(pythonparserParser.ARITHMETIC_OPERATORS)
+                        self.match(pythonparserParser.ARITH_OP)
                         self.state = 54
                         self.conditional(2)
                         pass
@@ -823,11 +823,11 @@ class pythonparserParser ( Parser ):
             else:
                 return self.getToken(pythonparserParser.NUMBER, i)
 
-        def ARITHMETIC_FUNCTIONS(self, i:int=None):
+        def ARITH_FUNC(self, i:int=None):
             if i is None:
-                return self.getTokens(pythonparserParser.ARITHMETIC_FUNCTIONS)
+                return self.getTokens(pythonparserParser.ARITH_FUNC)
             else:
-                return self.getToken(pythonparserParser.ARITHMETIC_FUNCTIONS, i)
+                return self.getToken(pythonparserParser.ARITH_FUNC, i)
 
         def getRuleIndex(self):
             return pythonparserParser.RULE_forloop

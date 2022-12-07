@@ -1,4 +1,4 @@
-// Generated from c:\Users\johns\Downloads\mostupdated\CMP_SC_4450_Parser_Project\pythonparser.g4 by ANTLR 4.9.2
+// Generated from c:\Users\johns\Downloads\CMP_SC_4450_Parser_Project\pythonparser.g4 by ANTLR 4.9.2
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;
@@ -18,9 +18,8 @@ public class pythonparserLexer extends Lexer {
 	public static final int
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
 		T__9=10, T__10=11, T__11=12, T__12=13, T__13=14, T__14=15, VAR=16, NUMBER=17, 
-		STRING=18, DIGIT=19, LETTER=20, ASSIGNMENT_OPERATORS=21, ARITHMETIC_OPERATORS=22, 
-		ARITHMETIC_FUNCTIONS=23, NEWLINE=24, WHITE_SPACE=25, CONDITIONAL_OPERATORS=26, 
-		COMMENT=27;
+		STRING=18, DIGIT=19, LETTER=20, ASSIGN_OP=21, ARITH_OP=22, ARITH_FUNC=23, 
+		NEWLINE=24, WHITE_SPACE=25, COND_OP=26, COMMENT=27;
 	public static String[] channelNames = {
 		"DEFAULT_TOKEN_CHANNEL", "HIDDEN"
 	};
@@ -33,9 +32,8 @@ public class pythonparserLexer extends Lexer {
 		return new String[] {
 			"T__0", "T__1", "T__2", "T__3", "T__4", "T__5", "T__6", "T__7", "T__8", 
 			"T__9", "T__10", "T__11", "T__12", "T__13", "T__14", "VAR", "NUMBER", 
-			"STRING", "DIGIT", "LETTER", "ASSIGNMENT_OPERATORS", "ARITHMETIC_OPERATORS", 
-			"ARITHMETIC_FUNCTIONS", "NEWLINE", "WHITE_SPACE", "CONDITIONAL_OPERATORS", 
-			"COMMENT"
+			"STRING", "DIGIT", "LETTER", "ASSIGN_OP", "ARITH_OP", "ARITH_FUNC", "NEWLINE", 
+			"WHITE_SPACE", "COND_OP", "COMMENT"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
@@ -51,8 +49,8 @@ public class pythonparserLexer extends Lexer {
 		return new String[] {
 			null, null, null, null, null, null, null, null, null, null, null, null, 
 			null, null, null, null, "VAR", "NUMBER", "STRING", "DIGIT", "LETTER", 
-			"ASSIGNMENT_OPERATORS", "ARITHMETIC_OPERATORS", "ARITHMETIC_FUNCTIONS", 
-			"NEWLINE", "WHITE_SPACE", "CONDITIONAL_OPERATORS", "COMMENT"
+			"ASSIGN_OP", "ARITH_OP", "ARITH_FUNC", "NEWLINE", "WHITE_SPACE", "COND_OP", 
+			"COMMENT"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();

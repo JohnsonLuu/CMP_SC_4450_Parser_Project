@@ -123,12 +123,12 @@ class pythonparserLexer(Lexer):
     STRING = 18
     DIGIT = 19
     LETTER = 20
-    ASSIGNMENT_OPERATORS = 21
-    ARITHMETIC_OPERATORS = 22
-    ARITHMETIC_FUNCTIONS = 23
+    ASSIGN_OP = 21
+    ARITH_OP = 22
+    ARITH_FUNC = 23
     NEWLINE = 24
     WHITE_SPACE = 25
-    CONDITIONAL_OPERATORS = 26
+    COND_OP = 26
     COMMENT = 27
 
     channelNames = [ u"DEFAULT_TOKEN_CHANNEL", u"HIDDEN" ]
@@ -141,15 +141,14 @@ class pythonparserLexer(Lexer):
             "','" ]
 
     symbolicNames = [ "<INVALID>",
-            "VAR", "NUMBER", "STRING", "DIGIT", "LETTER", "ASSIGNMENT_OPERATORS", 
-            "ARITHMETIC_OPERATORS", "ARITHMETIC_FUNCTIONS", "NEWLINE", "WHITE_SPACE", 
-            "CONDITIONAL_OPERATORS", "COMMENT" ]
+            "VAR", "NUMBER", "STRING", "DIGIT", "LETTER", "ASSIGN_OP", "ARITH_OP", 
+            "ARITH_FUNC", "NEWLINE", "WHITE_SPACE", "COND_OP", "COMMENT" ]
 
     ruleNames = [ "T__0", "T__1", "T__2", "T__3", "T__4", "T__5", "T__6", 
                   "T__7", "T__8", "T__9", "T__10", "T__11", "T__12", "T__13", 
                   "T__14", "VAR", "NUMBER", "STRING", "DIGIT", "LETTER", 
-                  "ASSIGNMENT_OPERATORS", "ARITHMETIC_OPERATORS", "ARITHMETIC_FUNCTIONS", 
-                  "NEWLINE", "WHITE_SPACE", "CONDITIONAL_OPERATORS", "COMMENT" ]
+                  "ASSIGN_OP", "ARITH_OP", "ARITH_FUNC", "NEWLINE", "WHITE_SPACE", 
+                  "COND_OP", "COMMENT" ]
 
     grammarFileName = "pythonparser.g4"
 
