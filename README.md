@@ -18,22 +18,26 @@ ANTLR, Java 11+, and Python\
 \
 Users will be running this project in the Ptyon Runtime Environment.
 
-## How to Use/Run
+## How to Use/Run the Parser
 
 To setup the environments listed above, users will need to run the following commands\
-\
-Java:\
-\
+
+Java:
+
 Head to the link below and install the latest version of Java
-
 https://www.oracle.com/java/technologies/downloads/
-\
-Python:\
-\
-Head to the link below and install the latest version of Python
 
+Once installed, use the following command to run the jar file:
+```java -jar .\antlr-4.11.1-complete.jar -Dlanguage=Python3 .\pythonparser.g4```
+
+Python:
+
+Head to the link below and install the latest version of Python
 https://www.python.org/downloads/
-\
+
+Once installed, run the following command to test Python files:
+```python main.py test.py```
+
 ANTLR:\
 \
 Once the following have been installed, you can run the following in the console:
