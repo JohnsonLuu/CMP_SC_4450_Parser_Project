@@ -23,3 +23,5 @@ for i in range(1, 2):
 def func():
     y = 2;
 # Testing of a comment
+
+func()

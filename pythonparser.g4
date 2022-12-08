@@ -4,7 +4,7 @@ start:
     (definitions)* EOF;
 
 definitions: 
-    variable | ifblocks | whileloop | comment | forloop | function;
+    variable | ifblocks | whileloop | comment | forloop | function | functioncall;
 
 variable:  
     VAR ASSIGN_OP (VAR | STRING | NUMBER | ARITH_FUNC) NEWLINE?;
@@ -75,3 +75,6 @@ forloop:
 
 function: 
     ('def' VAR '(' ((VAR | NUMBER)','?)* '):' block);
+
+functioncall: 
+    (VAR '(' ((VAR | NUMBER | ARITH_FUNC | functioncall) ','?)* ')');
