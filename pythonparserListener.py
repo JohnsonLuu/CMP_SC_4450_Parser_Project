@@ -89,5 +89,14 @@ class pythonparserListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by pythonparserParser#function.
+    def enterFunction(self, ctx:pythonparserParser.FunctionContext):
+        pass
+
+    # Exit a parse tree produced by pythonparserParser#function.
+    def exitFunction(self, ctx:pythonparserParser.FunctionContext):
+        pass
+
+
 
 del pythonparserParser

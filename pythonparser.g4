@@ -72,3 +72,6 @@ COMMENT:
 // range parameters are start and stop
 forloop: 
     ('for' VAR 'in' (VAR | 'range(' (NUMBER | ((VAR | NUMBER | ARITH_FUNC) ',' (VAR | NUMBER | ARITH_FUNC))) ')') ':'  block);
+
+function: 
+    ('def' VAR '(' ((VAR | NUMBER)','?)* '):' block);
