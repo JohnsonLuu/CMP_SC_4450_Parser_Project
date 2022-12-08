@@ -16,11 +16,11 @@ To be able to run this project, users will need to have the following installed:
 \
 ANTLR, Java 11+, and Python\
 \
-Users will be running this project in the Ptyon Runtime Environment.
+Users will be running this project in the Python Runtime Environment.
 
 ## How to Use/Run the Parser
 
-To setup the environments listed above, users will need to run the following commands\
+To setup the environments listed above, users will need to run the following commands:
 
 Java:
 
