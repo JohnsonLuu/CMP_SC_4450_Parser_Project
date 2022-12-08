@@ -20,4 +20,6 @@ for i in range(1, 2):
         y = 3
         break
 
+def func():
+    y = 2;
 # Testing of a comment

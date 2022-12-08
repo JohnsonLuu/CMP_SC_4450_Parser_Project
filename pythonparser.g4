@@ -4,7 +4,7 @@ start:
     (definitions)* EOF;
 
 definitions: 
-    variable | ifblocks | whileloop | comment | forloop;
+    variable | ifblocks | whileloop | comment | forloop | function;
 
 variable:  
     VAR ASSIGN_OP (VAR | STRING | NUMBER | ARITH_FUNC) NEWLINE?;
@@ -71,7 +71,7 @@ COMMENT:
 
 // range parameters are start and stop
 forloop: 
-    ('for' VAR 'in' (VAR | 'range(' (NUMBER | ((VAR | NUMBER | ARITH_FUNC) ',' (VAR | NUMBER | ARITH_FUNC))) ')') ':'  block);
+    ('for' VAR 'in' (VAR | 'range(' (NUMBER | ((VAR | NUMBER | ARITH_FUNC) ',' (VAR | NUMBER | ARITH_FUNC)))) '):'  block);
 
 function: 
     ('def' VAR '(' ((VAR | NUMBER)','?)* '):' block);
