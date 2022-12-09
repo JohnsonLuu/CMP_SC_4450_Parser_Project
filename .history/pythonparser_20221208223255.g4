@@ -7,11 +7,8 @@ definitions:
     variable | ifblocks | whileloop | comment | forloop | function | functioncall;
 
 function: 
-    ('def' VAR '(' ((VAR)','?)* '):' block);
-
-functioncall: 
-    (VAR '(' ((VAR | NUMBER | ARITH_FUNC | functioncall) ','?)* ')');
-
+    ('def' VAR '(' ((VAR | NUMBER)','?)* '):' block);
+    
 variable:  
     VAR ASSIGN_OP (VAR | STRING | NUMBER | ARITH_FUNC) NEWLINE?;
 
@@ -78,3 +75,6 @@ COMMENT:
 // range parameters are start and stop
 forloop: 
     ('for' VAR 'in' (VAR | 'range(' (NUMBER | ((VAR | NUMBER | ARITH_FUNC) ',' (VAR | NUMBER | ARITH_FUNC)))) '):'  block);
+
+functioncall: 
+    (VAR '(' ((VAR | NUMBER | ARITH_FUNC | functioncall) ','?)* ')');

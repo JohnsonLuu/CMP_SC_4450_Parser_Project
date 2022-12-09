@@ -6,8 +6,9 @@ start:
 definitions: 
     variable | ifblocks | whileloop | comment | forloop | function | functioncall;
 
+// 
 function: 
-    ('def' VAR '(' ((VAR)','?)* '):' block);
+    ('def' VAR '(' ((VAR | NUMBER)','?)* '):' block);
 
 functioncall: 
     (VAR '(' ((VAR | NUMBER | ARITH_FUNC | functioncall) ','?)* ')');

@@ -26,6 +26,24 @@ class pythonparserListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by pythonparserParser#function.
+    def enterFunction(self, ctx:pythonparserParser.FunctionContext):
+        pass
+
+    # Exit a parse tree produced by pythonparserParser#function.
+    def exitFunction(self, ctx:pythonparserParser.FunctionContext):
+        pass
+
+
+    # Enter a parse tree produced by pythonparserParser#functioncall.
+    def enterFunctioncall(self, ctx:pythonparserParser.FunctioncallContext):
+        pass
+
+    # Exit a parse tree produced by pythonparserParser#functioncall.
+    def exitFunctioncall(self, ctx:pythonparserParser.FunctioncallContext):
+        pass
+
+
     # Enter a parse tree produced by pythonparserParser#variable.
     def enterVariable(self, ctx:pythonparserParser.VariableContext):
         pass
@@ -86,24 +104,6 @@ class pythonparserListener(ParseTreeListener):
 
     # Exit a parse tree produced by pythonparserParser#forloop.
     def exitForloop(self, ctx:pythonparserParser.ForloopContext):
-        pass
-
-
-    # Enter a parse tree produced by pythonparserParser#function.
-    def enterFunction(self, ctx:pythonparserParser.FunctionContext):
-        pass
-
-    # Exit a parse tree produced by pythonparserParser#function.
-    def exitFunction(self, ctx:pythonparserParser.FunctionContext):
-        pass
-
-
-    # Enter a parse tree produced by pythonparserParser#functioncall.
-    def enterFunctioncall(self, ctx:pythonparserParser.FunctioncallContext):
-        pass
-
-    # Exit a parse tree produced by pythonparserParser#functioncall.
-    def exitFunctioncall(self, ctx:pythonparserParser.FunctioncallContext):
         pass
 
 
