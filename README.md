@@ -48,6 +48,39 @@ Once the following have been installed, you can run the following in the console
 $pip install antlr4-python3-runtime
 ```
 
+## Visualization of Grammar (VS Code)
+To begin, install "ANTLR4 grammar syntax support" extension for Visual Studio Code.  
+\
+This can be done through the Extension Marketplace in VS Code or directly at   
+https://marketplace.visualstudio.com/items?itemName=mike-lischke.vscode-antlr4. 
+
+Open the .g4 file.  
+
+Click on Run and then Add Configuration  
+When prompted, choose "Node.js"  
+
+Now, this should auto-generate a configuration file for debugging.  
+
+Change the configuration file to below:
+```json
+{
+    "version": "2.0.0",
+    "configurations": [
+        {
+            "name": "Debug ANTLR4 grammar",
+            "type": "antlr-debug",
+            "request": "launch",
+            "input": "test.py",
+            "grammar": "pythonparser.g4",
+            "startRule": "start",
+            "printParseTree": true,
+            "visualParseTree": true
+        }
+    ]
+}
+```
+When you run the debugger, the extension will automatically generate the parse tree.
+
 ## Demo
 
 TBA
