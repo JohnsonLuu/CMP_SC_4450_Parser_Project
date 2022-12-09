@@ -22,6 +22,19 @@ Users will be running this project in the Python Runtime Environment.
 
 To setup the environments listed above, users will need to run the following commands:
 
+ANTLR:\
+\
+Run the following in the console to install ANTLR:   
+
+```
+$pip install antlr4-tools
+```
+Consult https://github.com/antlr/antlr4/blob/master/doc/getting-started.md for any issues that may arise when installing ANTLR.  
+
+Next, run the command below to download the antlr JAR file. This can also be downloaded directly from https://www.antlr.org/download.html. 
+```
+pip install antlr4-python3-runtime
+```
 Java:
 
 Head to the link below and install the latest version of Java
@@ -39,14 +52,6 @@ https://www.python.org/downloads/
 Once installed, run the following command to test Python files:
 \
 ```python main.py test.py```
-
-ANTLR:\
-\
-Once the following have been installed, you can run the following in the console:
-
-```
-$pip install antlr4-python3-runtime
-```
 
 ## Visualization of Grammar (VS Code)
 To begin, install "ANTLR4 grammar syntax support" extension for Visual Studio Code.  
